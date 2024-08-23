@@ -28,7 +28,7 @@ const formatError = (err: { reason: string }) => {
   return `This task failed. Reason: ${err.reason}`
 }
 
-const [result, error] = await tryThis(Promise.reject('For no reason at all...'))
+const [result, error] = await tryThis(Promise.reject({ reason: 'For no reason at all...'}), formatError)
 console.log(result) // null
 console.log(error.message) // 'This task failed. Reason: For no reason at all...'
 ```
