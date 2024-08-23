@@ -29,7 +29,7 @@ const formatError = (err: { reason: string }) => {
 }
 
 const [result, error] = await tryThis(
-  Promise.reject({ reason: 'For no reason at all...'}), 
+  Promise.reject({ reason: 'For no reason at all...' }), 
   formatError
 )
 console.log(result) // null
