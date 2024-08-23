@@ -2,6 +2,23 @@
 
 Perform tasks without having to worry about using `try/catch` blocks. Inspired in Go's errors handling.
 
+## Installation
+
+### NPM
+```
+npm install @ivnatsr/trythis
+```
+
+### PNPM
+```
+pnpm add @ivnatsr/trythis
+```
+
+### BUN
+```
+bun add @ivnatsr/trythis
+```
+
 ## Usage 
 
 You only need to pass a task as argument, and optionally, a custom error formatter to model the returned errors to the shape you want.
