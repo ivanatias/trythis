@@ -8,6 +8,7 @@ import type { ErrorFormatter } from './types.ts'
  * If this argument is provided, it should return the error that will be returned as the second value of the tuple.
  * The returned value will be of the shape returned by the formatter you passed.
  * If this argument is not provided, the error will be an `Error` object.
+ *
  * @returns The error that will be returned as the second value of the tuple.
  */
 export const errorHandler = <ThrowValueType, ReturnedErrorValueType>(
