@@ -39,11 +39,11 @@ console.log(error) // 'This task failed. Reason: For no reason at all...'
 In case of passing a function, `tryThis` will return a function with the same signature as the function you passed as argument. This new function will also return a tuple that contains the result and an error. If the function doesn't throw, result will be the value returned by that function and error will be `null`. If the function throws, result will be `null` and `error !== null`.
 
 ```ts
+// Passing a function
 const someFunctionThatMightThrow = (...args) => {
   // ...
 }  
 
-// Passing a function
 const failOrSucceed = tryThis(someFunctionThatMightThrow)
 const [result, error] = failOrSucceed(args)
 console.log(result) // Return value of `failOrSucceed` in case of success, or `null` in case of failure
