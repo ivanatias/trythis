@@ -46,5 +46,3 @@ export function tryThis<
 
   return task as any
 }
-
-const [result, error] = await tryThis(Promise.resolve('hello'))
