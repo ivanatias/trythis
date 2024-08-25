@@ -1,6 +1,6 @@
 {
 	"name": "@ivnatsr/trythis",
-	"version": "1.0.0",
+	"version": "0.1.0",
 	"description": "Perform tasks without having to worry about using try/catch blocks. Inspired in Go's errors handling.",
 	"author": "Ivan Atias <ivan.d.atias@gmail.com>",
 	"type": "module",
