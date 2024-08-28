@@ -11,11 +11,12 @@
 		"dev": "tsup --watch",
 		"lint": "pnpx @biomejs/biome lint",
 		"format": "pnpx @biomejs/biome format --write",
-		"check": "pnpx @biomejs/biome check --write",
+		"lint-and-format": "pnpx @biomejs/biome check --write",
 		"typecheck": "tsc",
-		"checks:ci": "pnpm typecheck && pnpm test && pnpm build",
+		"check": "pnpm lint-and-format && pnpm typecheck",
+		"check-and-build": "pnpm check && pnpm build",
 		"version-package": "changeset version",
-		"publish": "changeset publish"
+		"release-package": "changeset publish"
 	},
 	"private": false,
 	"repository": {
