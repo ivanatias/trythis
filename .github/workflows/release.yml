@@ -29,8 +29,8 @@ jobs:
             cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      - name: CI checks
-        run: pnpm checks:ci
+      - name: Check, format, test and build
+        run: pnpm check-and-build
       - name: Create release pull request or publish to NPM
         id: changesets
         uses: changesets/action@v1
