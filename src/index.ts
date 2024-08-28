@@ -1,5 +1,5 @@
 import { errorHandler } from './error-handler.ts'
-import type { TryThisResult, ErrorFormatter } from './types.ts'
+import type { ErrorFormatter, TryThisResult } from './types.ts'
 
 /**
  * @description
