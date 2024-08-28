@@ -17,7 +17,7 @@ export const errorHandler = <ThrowValueType, ReturnedErrorValueType>(
 ) => {
   if (errorFormatter !== undefined) return errorFormatter(err)
   if (!(err instanceof Error)) {
-    return new Error(typeof err === 'string' ? err : JSON.stringify(err))
+    return new Error(typeof err === 'string' ? err : JSON.stringify(err, null, 2))
   }
   return err
 }
