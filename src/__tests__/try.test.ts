@@ -1,4 +1,4 @@
-import { tryThis } from '../index.ts'
+import { tryThis } from '../try.ts'
 
 describe('tryThis', () => {
   it('should return a promise if the task passed as argument is also a promise', () => {
