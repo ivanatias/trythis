@@ -1,0 +1,46 @@
+name: Release package
+
+on: 
+  push:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs: 
+  release: 
+    name: Release
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with: 
+          fetch-depth: 0
+      - name: Setup pnpm    
+        uses: pnpm/action-setup@v4
+        with: 
+          run_install: false
+      - name: Setup node      
+        uses: actions/setup-node@v4
+        with: 
+            node-version: 20
+            cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: CI checks
+        run: pnpm checks:ci
+      - name: Create release pull request or publish to NPM
+        id: changesets
+        uses: changesets/action@v1
+        with: 
+          publish: pnpm publish
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Output if published 
+        if: steps.changesets.outputs.published == 'true'
+        run: | 
+          echo "🎉 Published: https://www.npmjs.com/package/@ivnatsr/trythis"
+  
