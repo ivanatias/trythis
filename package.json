@@ -25,14 +25,24 @@
 		"url": "https://github.com/ivanatias/trythis/issues"
 	},
 	"release": {
-		"branches": ["main"]
+		"branches": [
+			"main"
+		]
 	},
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"publishConfig": {
 		"access": "public"
 	},
 	"license": "MIT",
-	"keywords": ["try", "catch", "errors", "errors-handling", "TypeScript"],
+	"keywords": [
+		"try",
+		"catch",
+		"errors",
+		"errors-handling",
+		"TypeScript"
+	],
 	"exports": {
 		".": {
 			"import": {
@@ -48,6 +58,7 @@
 	"packageManager": "pnpm@9.8.0",
 	"devDependencies": {
 		"@biomejs/biome": "1.8.3",
+		"@changesets/cli": "2.27.7",
 		"tsup": "8.2.4",
 		"typescript": "5.5.4",
 		"vitest": "2.0.5"
