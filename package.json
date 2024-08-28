@@ -13,8 +13,9 @@
 		"dev": "tsup --watch",
 		"lint": "pnpx @biomejs/biome lint",
 		"format": "pnpx @biomejs/biome format --write",
-		"check:": "pnpx @biomejs/biome check --write",
-		"typecheck": "tsc --noEmit"
+		"check": "pnpx @biomejs/biome check --write",
+		"typecheck": "tsc",
+		"ci": "pnpm check && typecheck && pnpm test && pnpm build"
 	},
 	"private": false,
 	"repository": {
