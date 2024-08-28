@@ -4,8 +4,6 @@
 	"description": "Perform tasks without having to worry about using try/catch blocks. Inspired in Go's errors handling.",
 	"author": "Ivan Atias <ivan.d.atias@gmail.com>",
 	"type": "module",
-	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
 	"scripts": {
 		"test:dev": "vitest",
 		"test": "vitest run",
