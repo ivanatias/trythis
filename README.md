@@ -21,7 +21,7 @@ bun add @ivnatsr/trythis
 
 ## Usage 
 
-You only need to pass a task as argument, and optionally, a custom error formatter to model the returned errors to the shape you want.
+You only need to pass a task as argument (it can be a promise or a function that might throw), and optionally, a custom error formatter to model the returned errors to the shape you want.
 
 In case of passing a promise, `tryThis` will return a promise that resolves with a tuple that contains the resolved value of the task and an error. If the task resolves, the result will be the resolved value of the task and the error will be `null`. If the task rejects for any reason, the result will be `null`, and `error !== null`.
 
