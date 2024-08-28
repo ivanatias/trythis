@@ -1,5 +1,11 @@
 # @ivnatsr/trythis
 
+## 0.1.4
+
+### Patch Changes
+
+- ae5de1c: Release
+
 ## 0.1.3
 
 ### Patch Changes
