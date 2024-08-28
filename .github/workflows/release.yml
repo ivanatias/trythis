@@ -7,12 +7,6 @@ on:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
-
-permissions: 
-  contents: write
-  id-token: write
-  pull-requests: write 
-  packages: write  
  
 jobs: 
   release: 
