@@ -1,7 +1,7 @@
 import { errorHandler } from '../error-handler.ts'
 
 describe('errorHandler', () => {
-  it('should format error if an error formatter is passed as argument', () => {
+  it('should format error if an error formatter is passed', () => {
     const formatError = (err: { reason: string }) => {
       return `This task failed because of: ${err.reason}`
     }
@@ -11,26 +11,25 @@ describe('errorHandler', () => {
     )
   })
 
-  it('should return an error object if no error formatter is provided and the thrown value is not an error object', () => {
+  it('should return an error object if no error formatter is passed and the thrown value is not an error object', () => {
     expect(errorHandler('something went wrong')).toBeInstanceOf(Error)
   })
 
-  it('should return an error object with appropriate message when a string is passed as thrown value and no error formatter is passed as argument', () => {
+  it('should return an error object with appropriate message if no error formatter is passed', () => {
     expect(errorHandler('something went wrong')).toHaveProperty(
       'message',
       'something went wrong'
     )
-  })
 
-  it('should return an error object with a stringyfied message when an object is passed as thrown value and no error formatter is passed as argument', () => {
     const thrownValue = { reason: 'something went wrong' }
+
     expect(errorHandler(thrownValue)).toHaveProperty(
       'message',
       JSON.stringify(thrownValue, null, 2)
     )
   })
 
-  it('should return the thrown value as is if it is an error object and no error formatter is passed as argument', () => {
+  it('should return the thrown value as is if it is an error object and no error formatter is passed', () => {
     const error = new Error('something went wrong')
     expect(errorHandler(error)).toEqual(error)
   })
