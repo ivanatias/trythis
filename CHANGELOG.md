@@ -1,5 +1,11 @@
 # @ivnatsr/trythis
 
+## 0.1.5
+
+### Patch Changes
+
+- ba61b37: Expose Result type for convenience
+
 ## 0.1.4
 
 ### Patch Changes
