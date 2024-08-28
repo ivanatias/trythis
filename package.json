@@ -14,7 +14,7 @@
 		"check": "pnpx @biomejs/biome check --write",
 		"typecheck": "tsc",
 		"checks:ci": "pnpm typecheck && pnpm test && pnpm build",
-		"version": "changeset version",
+		"version-package": "changeset version",
 		"publish": "changeset publish"
 	},
 	"private": false,
