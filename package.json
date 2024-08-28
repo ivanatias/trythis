@@ -1,6 +1,6 @@
 {
 	"name": "@ivnatsr/trythis",
-	"version": "0.1.6",
+	"version": "0.1.7",
 	"description": "Perform tasks without having to worry about using try/catch blocks. Inspired in Go's errors handling.",
 	"author": "Ivan Atias <ivan.d.atias@gmail.com>",
 	"type": "module",
@@ -28,14 +28,24 @@
 		"url": "https://github.com/ivanatias/trythis/issues"
 	},
 	"release": {
-		"branches": ["main"]
+		"branches": [
+			"main"
+		]
 	},
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"publishConfig": {
 		"access": "public"
 	},
 	"license": "MIT",
-	"keywords": ["try", "catch", "errors", "errors-handling", "TypeScript"],
+	"keywords": [
+		"try",
+		"catch",
+		"errors",
+		"errors-handling",
+		"TypeScript"
+	],
 	"exports": {
 		".": {
 			"import": {

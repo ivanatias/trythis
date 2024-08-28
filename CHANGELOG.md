@@ -1,5 +1,11 @@
 # @ivnatsr/trythis
 
+## 0.1.7
+
+### Patch Changes
+
+- 0d33d46: Make tryThis function throw if no task is passed as argument
+
 ## 0.1.6
 
 ### Patch Changes
