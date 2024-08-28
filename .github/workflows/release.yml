@@ -34,7 +34,10 @@ jobs:
       - name: Create release pull request or publish to NPM
         id: changesets
         uses: changesets/action@v1
-        with: 
+        with:
+          title: Release new package version
+          commit: "ci: release new package version"
+          createGithubReleases: true
           publish: pnpm release-package
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
