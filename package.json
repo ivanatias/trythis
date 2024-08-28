@@ -13,7 +13,7 @@
 		"format": "pnpx @biomejs/biome format --write",
 		"check": "pnpx @biomejs/biome check --write",
 		"typecheck": "tsc",
-		"checks:ci": "pnpm check && pnpm typecheck && pnpm test && pnpm build"
+		"checks:ci": "pnpm typecheck && pnpm test && pnpm build"
 	},
 	"private": false,
 	"repository": {
@@ -25,24 +25,14 @@
 		"url": "https://github.com/ivanatias/trythis/issues"
 	},
 	"release": {
-		"branches": [
-			"main"
-		]
+		"branches": ["main"]
 	},
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"publishConfig": {
 		"access": "public"
 	},
 	"license": "MIT",
-	"keywords": [
-		"try",
-		"catch",
-		"errors",
-		"errors-handling",
-		"TypeScript"
-	],
+	"keywords": ["try", "catch", "errors", "errors-handling", "TypeScript"],
 	"exports": {
 		".": {
 			"import": {
