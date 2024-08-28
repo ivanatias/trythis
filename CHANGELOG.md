@@ -1,5 +1,11 @@
 # @ivnatsr/trythis
 
+## 0.1.6
+
+### Patch Changes
+
+- 836755e: Add import example on README.md file
+
 ## 0.1.5
 
 ### Patch Changes
