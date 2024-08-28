@@ -15,7 +15,7 @@
 		"format": "pnpx @biomejs/biome format --write",
 		"check": "pnpx @biomejs/biome check --write",
 		"typecheck": "tsc",
-		"ci": "pnpm check && typecheck && pnpm test && pnpm build"
+		"ci": "pnpm check && pnpm typecheck && pnpm test && pnpm build"
 	},
 	"private": false,
 	"repository": {
