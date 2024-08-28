@@ -25,24 +25,14 @@
 		"url": "https://github.com/ivanatias/trythis/issues"
 	},
 	"release": {
-		"branches": [
-			"main"
-		]
+		"branches": ["main"]
 	},
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"publishConfig": {
 		"access": "public"
 	},
 	"license": "MIT",
-	"keywords": [
-		"try",
-		"catch",
-		"errors",
-		"errors-handling",
-		"TypeScript"
-	],
+	"keywords": ["try", "catch", "errors", "errors-handling", "TypeScript"],
 	"exports": {
 		".": {
 			"import": {
