@@ -10,7 +10,9 @@ concurrency:
 
 permissions: 
   contents: write
-  id-token: write  
+  id-token: write
+  pull-requests: write 
+  packages: write  
  
 jobs: 
   release: 
