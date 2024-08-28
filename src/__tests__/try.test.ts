@@ -54,4 +54,16 @@ describe('tryThis', () => {
     expect(error2).not.toBeNull()
     expect(error2).toBe('This task failed')
   })
+
+  it('should throw a TypeError if no task is passed as first argument', () => {
+    try {
+      // @ts-expect-error
+      tryThis()
+      // Fail test if above expression doesn't throw anything.
+      expect(true).toBe(false)
+    } catch (err) {
+      expect(err).toBeInstanceOf(TypeError)
+      expect((err as TypeError).message).toBe('Passing a task is required')
+    }
+  })
 })

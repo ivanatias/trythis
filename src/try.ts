@@ -27,6 +27,8 @@ export function tryThis<
   task: TaskType,
   errorFormatter?: ErrorFormatter<ThrownValueType, ReturnedErrorValueType>
 ): TryThisResult<TaskType, ReturnedErrorValueType> {
+  if (task == null) throw new TypeError('Passing a task is required')
+
   if (task instanceof Promise) {
     return task
       .then((result) => [result, null])
