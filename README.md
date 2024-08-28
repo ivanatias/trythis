@@ -30,6 +30,8 @@ By default, if a task fails, and no error formatter is provided, the error will 
 If you pass an error formatter, the error will be of the shape returned by the formatter you passed.
 
 ```ts
+import { tryThis } from '@ivnatsr/trythis'
+
 // Passing a promise that resolves
 const [result, error] = await tryThis(Promise.resolve('hello'))
 console.log(result) // 'hello'
@@ -56,6 +58,8 @@ console.log(error) // 'This task failed. Reason: For no reason at all...'
 In case of passing a function, `tryThis` will return a function with the same signature as the function you passed as argument. This new function will also return a tuple that contains the result and an error. If the function doesn't throw, result will be the value returned by the function you passed as argument, and error will be `null`. If the function throws, result will be `null` and `error !== null`.
 
 ```ts
+import { tryThis } from '@ivnatsr/trythis'
+
 // Passing a function
 const someFunctionThatMightThrow = (...args) => {
   // ...
