@@ -13,7 +13,7 @@
 		"format": "pnpx @biomejs/biome format --write",
 		"lint-and-format": "pnpx @biomejs/biome check --write",
 		"typecheck": "tsc",
-		"check": "pnpm lint-and-format && pnpm typecheck",
+		"check": "pnpm lint-and-format && pnpm typecheck && pnpm test",
 		"check-and-build": "pnpm check && pnpm build",
 		"version-package": "changeset version",
 		"release-package": "changeset publish"
