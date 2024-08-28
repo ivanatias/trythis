@@ -26,7 +26,7 @@ describe('errorHandler', () => {
     const thrownValue = { reason: 'something went wrong' }
     expect(errorHandler(thrownValue)).toHaveProperty(
       'message',
-      JSON.stringify(thrownValue)
+      JSON.stringify(thrownValue, null, 2)
     )
   })
 
