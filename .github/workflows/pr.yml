@@ -16,6 +16,9 @@ jobs:
     permissions: 
       contents: write  
 
+    # Skip the job if the PR is from changeset-release/main   
+    if: ${{ github.head_ref != 'changeset-release/main' }}  
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
