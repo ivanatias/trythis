@@ -1,5 +1,11 @@
 # @ivnatsr/trythis
 
+## 0.1.8
+
+### Patch Changes
+
+- f7a2d18: Better usage examples
+
 ## 0.1.7
 
 ### Patch Changes
