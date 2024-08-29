@@ -21,9 +21,9 @@ bun add @ivnatsr/trythis
 
 ## Usage 
 
-You only need to pass a task as argument (it can be a promise or a function that might throw), and optionally, a custom error formatter to model the returned errors to the shape you want.
+You only need to pass a task as argument (it can be a promise or a function that might throw), and optionally, a custom error formatter to model the returned error to the shape you want.
 
-In case of passing a promise, `tryThis` will return a promise that resolves with a tuple that contains the resolved value of the task and an error. If the task resolves, the result will be the resolved value of the task and the error will be `null`. If the task rejects for any reason, the result will be `null`, and `error !== null`.
+In case of passing a promise, `tryThis` will return a promise that resolves with a tuple that contains the resolved value of the task and an error. If the task resolves, the result will be the resolved value of that task and the error will be `null`. If the task rejects for any reason, the result will be `null`, and `error !== null`.
 
 By default, if a task fails, and no error formatter is provided, the error will be an `Error` object.
 
@@ -32,27 +32,31 @@ If you pass an error formatter, the error will be of the shape returned by the f
 ```ts
 import { tryThis } from '@ivnatsr/trythis'
 
-// Passing a promise that resolves
-const [result, error] = await tryThis(Promise.resolve('hello'))
-console.log(result) // 'hello'
-console.log(error) // null
+// Passing a promise
+const [result, error] = await tryThis(promise)
 
-// The promise rejects and no error formatter is passed
-const [result, error] = await tryThis(Promise.reject('fail'))
-console.log(result) // null
-console.log(error.message) // 'fail'
+console.log(result) // Resolved value of the promise if it resolves, or null if it rejects
+console.log(error) // An Error object if the promise rejects, or null if the promise resolves
 
-// The promise rejects and you passed an error formatter
+// With error formatter
 const formatError = (err: { reason: string }) => {
   return `This task failed. Reason: ${err.reason}`
 }
 
-const [result, error] = await tryThis(
-  Promise.reject({ reason: 'For no reason at all...' }), 
-  formatError
-)
-console.log(result) // null
-console.log(error) // 'This task failed. Reason: For no reason at all...'
+const getRandomUser = async () => {
+  const res = await fetch('https://randomuser.me/api/')
+  if (!res.ok) return Promise.reject({ reason: 'it just went wrong...' })
+  return res.json()
+}
+
+const [result, error] = await tryThis(getRandomUser(), formatError)
+
+if (error !== null) {
+  console.log(error) // "This task failed. Reason: it just went wrong..."
+  console.log(result) // null
+} else {
+  console.log(result) // Random user data 
+}
 ```
 
 In case of passing a function, `tryThis` will return a function with the same signature as the function you passed as argument. This new function will also return a tuple that contains the result and an error. If the function doesn't throw, result will be the value returned by the function you passed as argument, and error will be `null`. If the function throws, result will be `null` and `error !== null`.
